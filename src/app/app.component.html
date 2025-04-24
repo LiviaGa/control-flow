@@ -1,5 +1,13 @@
 <!-- <app-control-flow></app-control-flow> -->
 <!-- <app-interpolacao></app-interpolacao> -->
-<app-diretiva></app-diretiva>
-<app-propertie-binding></app-propertie-binding>
+<!-- <app-diretiva></app-diretiva> -->
+<!-- <app-propertie-binding></app-propertie-binding> -->
+
+<ul>
+  <li *ngFor="let carro of carros">
+    {{carro.id}} | {{carro.ano}} | {{carro.marca}} | {{carro.nome}} | {{carro.cor}}
+  </li>
+</ul>
+
+<app-cliente></app-cliente>
 <router-outlet />
