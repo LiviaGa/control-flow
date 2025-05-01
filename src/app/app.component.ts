@@ -7,12 +7,15 @@ import { InterpolacaoComponent } from './components/interpolacao/interpolacao.co
 import { PropertieBindingComponent } from './components/propertie-binding/propertie-binding.component';
 import { CommonModule } from '@angular/common';
 import { ClienteComponent } from './components/cliente/cliente.component';
+import { HomeComponent } from "./home/home.component";
+import { NavComponent } from "./components/nav/nav.component";
+import { TestComponent } from "./components/test/test.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InterpolacaoComponent, ControlFlowComponent, PropertieBindingComponent, DiretivaComponent,CommonModule,ClienteComponent],
+  imports: [RouterOutlet, InterpolacaoComponent, ControlFlowComponent, PropertieBindingComponent, DiretivaComponent, CommonModule, ClienteComponent, HomeComponent, NavComponent, TestComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
