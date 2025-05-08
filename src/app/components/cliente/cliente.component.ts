@@ -11,9 +11,10 @@ import { ClienteService } from '../../services/cliente.service';
   templateUrl: './cliente.component.html',
   styleUrl: './cliente.component.css'
 })
+
 export class ClienteComponent {
   clienteForm: FormGroup = new FormGroup({})
-  cliente: Cliente[] = []
+  clientes: Cliente[] = []
   clienteIdEdicao: string | null = null
 
 
@@ -25,9 +26,9 @@ export class ClienteComponent {
     })
 
   }
-
+  //indo na service, o metodo list retorna um observable de clientes, estou me inscrevendo para receber a resposta, atribuindo depois para a variavel clientes
   list(): void {
-    this.cliente = this.clienteService.list()
+    this.clienteService.list().subscribe((resposta) => (this.clientes = resposta))
   }
 
   //método executado ao inicializar a página
@@ -83,25 +84,25 @@ export class ClienteComponent {
     //}
   }
 
-  editar(id: string): void {
+   editar(id: string): void {
     //buscando todos os clientes e filtrnado pelo id enviado como parametro
-    const cliente = this.clienteService.list().find(c => c.id == id)
-    if (cliente) {
-      this.clienteIdEdicao = cliente.id
-      //atribuir os valores ao formulário
-      this.clienteForm.patchValue(
-        {
-          nome: cliente.nome,
-          telefone: cliente.telefone
-        }
-      )
-    }
-    //console.log(cliente)
-  }
+  //   const cliente = this.clienteService.list().find(c => c.id == id)
+  //   if (cliente) {
+  //     this.clienteIdEdicao = cliente.id
+  //     //atribuir os valores ao formulário
+  //     this.clienteForm.patchValue(
+  //       {
+  //         nome: cliente.nome,
+  //         telefone: cliente.telefone
+  //       }
+  //     )
+  //   }
+  //   //console.log(cliente)
+   }
 
-remover(id:string):void{
-this.clienteService.remove(id)
-}
+  remover(id: string): void {
+    this.clienteService.remove(id)
+  }
 
 
 

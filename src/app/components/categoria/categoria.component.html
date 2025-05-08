@@ -1,0 +1,23 @@
+<p>categoria works!</p>
+
+<table border ="1">
+  <thead>
+    <tr>
+    <th>id:</th>
+    <th>nome</th>
+    <th>descricao</th>
+    <th>Ativa</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let cat of categorias">
+
+    <tr>
+      <td>{{cat.id}}</td>
+      <td>{{cat.nome}}</td>
+      <td>{{cat.descricao}}</td>
+      <td>{{cat.ativa}}</td>
+    </tr>
+
+
+  </tbody>
+</table>

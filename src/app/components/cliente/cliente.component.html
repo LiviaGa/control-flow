@@ -4,7 +4,7 @@
   <input type="text" formControlName="nome">
 </p>
 <p>
-  <label>telefone</label>
+  <label>Telefone:</label>
   <input type="text" formControlName="telefone">
 </p>
 <p>
@@ -23,13 +23,13 @@
     <th>Ações</th>
   </tr>
   </thead>
-  <tbody *ngFor="let clientes of cliente">
+  <tbody *ngFor="let cliente of clientes">
 
     <tr>
-      <td>{{clientes.nome}}</td>
-      <td>{{clientes.telefone}}</td>
-      <td><input type="button" (click)="editar(clientes.id)" value="edit">
-      <input type="button" (click)="remover(clientes.id)" value="remover">
+      <td>{{cliente.nome}}</td>
+      <td>{{cliente.telefone}}</td>
+      <td><input type="button" (click)="editar(cliente.id)" value="edit">
+      <input type="button" (click)="remover(cliente.id)" value="remover">
       </td>
 
     </tr>
